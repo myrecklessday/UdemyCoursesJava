@@ -31,6 +31,18 @@ public class Main {
         bankAccount1.withdrawFunds(52);
         bankAccount1.withdrawFunds(56.01);
 
+        BankAccount bankAccount2 = new BankAccount("Karen", "karen@gmaiil.com", "4445555");
+        System.out.println(bankAccount2.getAccountNumber() + " name " + bankAccount2.getCustomerName());
+
+        VipCustomer customer1 = new VipCustomer();
+        System.out.println(customer1.getName() + " has credit limit " + customer1.getCreditLimit() + ", email: " + customer1.getEmail());
+
+        VipCustomer customer2 = new VipCustomer("Bob", 125.77);
+        System.out.println(customer2.getName() + " has credit limit " + customer2.getCreditLimit() + ", email: " + customer2.getEmail());
+
+        VipCustomer customer3 = new VipCustomer("Matt", 51.77, "matty@tut.by");
+        System.out.println(customer3.getName() + " has credit limit " + customer3.getCreditLimit() + ", email: " + customer3.getEmail());
+
     }
 
 }
