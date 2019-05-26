@@ -1,4 +1,4 @@
-package inheritance;
+package section_6_inheritance;
 
 public class Main {
 
