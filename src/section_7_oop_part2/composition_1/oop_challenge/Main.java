@@ -32,5 +32,13 @@ package section_7_oop_part2.composition_1.oop_challenge;
 public class Main {
     public static void main(String[] args) {
 
+
+        Hamburger hamburger = new Hamburger("Base", "white", "pork", 5.8);
+//        Tomato tomato = new Tomato(5.4);
+//        System.out.println(hamburger.addTomato(new Tomato(5.4)));
+
+        hamburger.addTomato(4.4);
+        System.out.println(hamburger.getTotalPrice());
+
     }
 }

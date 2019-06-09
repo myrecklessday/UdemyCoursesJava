@@ -21,7 +21,7 @@ public class Main {
 //        System.out.println("Remaining health = " + player.healthRemaining());
 
         //Class with using Encapsulation
-        EnhancedPlayer player = new EnhancedPlayer("Kate", 200, "Sword");
+        EnhancedPlayer player = new EnhancedPlayer("Kate", -20, "Sword");
         System.out.println("Initial health is " + player.getHealth());
     }
 }
