@@ -37,8 +37,9 @@ public class Main {
 //        Tomato tomato = new Tomato(5.4);
 //        System.out.println(hamburger.addTomato(new Tomato(5.4)));
 
-        hamburger.addTomato(4.4);
-        System.out.println(hamburger.getTotalPrice());
+        hamburger.addTomato(-1);
+        hamburger.addLettuce(1.8);
+        System.out.println("Total price of " + hamburger.getName() + " hamburger is " + hamburger.getTotalPrice());
 
     }
 }
