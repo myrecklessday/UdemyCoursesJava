@@ -37,9 +37,14 @@ public class Main {
 //        Tomato tomato = new Tomato(5.4);
 //        System.out.println(hamburger.addTomato(new Tomato(5.4)));
 
-        hamburger.addTomato(-1);
+        hamburger.addTomato(1);
         hamburger.addLettuce(1.8);
         System.out.println("Total price of " + hamburger.getName() + " hamburger is " + hamburger.getTotalPrice());
+
+        HealthyBurger healthyBurger = new HealthyBurger("chicken", 1.5);
+        healthyBurger.addAddition1("Cucumber",4.0);
+        healthyBurger.addLettuce(2);
+        System.out.println("Total price of " + healthyBurger.getName() + " is " + healthyBurger.getTotalPrice());
 
     }
 }

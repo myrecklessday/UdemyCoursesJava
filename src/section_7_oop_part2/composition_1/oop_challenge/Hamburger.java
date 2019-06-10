@@ -83,7 +83,15 @@ public class Hamburger {
         return price;
     }
 
-//    public void setCarrotPrice(double carrotPrice) {
+    public String getBreadRollType() {
+        return breadRollType;
+    }
+
+    public String getMeat() {
+        return meat;
+    }
+
+    //    public void setCarrotPrice(double carrotPrice) {
 //        this.carrotPrice = carrotPrice;
 //    }
 }
