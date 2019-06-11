@@ -34,17 +34,28 @@ public class Main {
 
 
         Hamburger hamburger = new Hamburger("Base", "white", "pork", 5.8);
-//        Tomato tomato = new Tomato(5.4);
-//        System.out.println(hamburger.addTomato(new Tomato(5.4)));
-
         hamburger.addTomato(1);
         hamburger.addLettuce(1.8);
-        System.out.println("Total price of " + hamburger.getName() + " hamburger is " + hamburger.getTotalPrice());
+        hamburger.addHamburgerAddition1("Egg", 2.1);
+        System.out.println("Total price of " + hamburger.getName() + " is " + hamburger.getTotalPrice());
 
         HealthyBurger healthyBurger = new HealthyBurger("chicken", 1.5);
         healthyBurger.addAddition1("Cucumber",4.0);
         healthyBurger.addLettuce(2);
         System.out.println("Total price of " + healthyBurger.getName() + " is " + healthyBurger.getTotalPrice());
+
+        DeluxeHamburger deluxeHamburger = new DeluxeHamburger("White with sesame", "grilled pork",
+                6.2, new Chips("Lays", 0.2, 2.4),
+                new Drinks("Coca Cola", 0.5, true, 3.1));
+        deluxeHamburger.addLettuce(4.4);
+        System.out.println("Total price of " + deluxeHamburger.getName() + " is " +
+                deluxeHamburger.getTotalPrice());
+
+        DeluxeHamburger deluxeHamburger2 = new DeluxeHamburger("White with sesame", "grilled pork", 5.4);
+        deluxeHamburger2.addCarrot(5.4);
+        System.out.println("Total price of " + deluxeHamburger2.getName() + " is " +
+                deluxeHamburger2.getTotalPrice());
+
 
     }
 }

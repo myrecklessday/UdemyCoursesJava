@@ -9,6 +9,11 @@ public class Hamburger {
     private double onionPrice;
     private double lettucePrice;
     private double carrotPrice;
+    //version with non-defined additions:
+    private String hamburgerAddition1Name;
+    private double hamburgerAddition1Price;
+    private String hamburgerAddition2Name;
+    private double hamburgerAddition2Price;
 
     private double price = 2.5;
 
@@ -51,6 +56,24 @@ public class Hamburger {
         }
     }
 
+    public void addHamburgerAddition1(String name, double price){
+        this.hamburgerAddition1Name = name;
+        if (price < 0){
+            System.out.println("Incorrect addition price!");
+        } else {
+            this.hamburgerAddition1Price = price;
+        }
+    }
+
+    public void addHamburgerAddition2(String name, double price){
+        this.hamburgerAddition2Name = name;
+        if (price < 0){
+            System.out.println("Incorrect addition price!");
+        } else {
+            this.hamburgerAddition2Price = price;
+        }
+    }
+
 
     public double getTotalPrice(){
         double totalPrice = this.price;
@@ -72,6 +95,17 @@ public class Hamburger {
             totalPrice += this.lettucePrice;
             System.out.println("Lettuce price is " + this.lettucePrice);
         }
+
+        if (this.hamburgerAddition1Name != null){
+            totalPrice += this.hamburgerAddition1Price;
+            System.out.println(this.hamburgerAddition1Name + " price is " + this.hamburgerAddition1Price);
+        }
+
+        if (this.hamburgerAddition2Name != null){
+            totalPrice += this.hamburgerAddition2Price;
+            System.out.println(this.hamburgerAddition2Name + " price is " + this.hamburgerAddition2Price);
+        }
+
         return totalPrice;
     }
 

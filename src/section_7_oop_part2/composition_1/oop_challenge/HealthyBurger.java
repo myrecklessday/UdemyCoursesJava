@@ -2,16 +2,14 @@ package section_7_oop_part2.composition_1.oop_challenge;
 
 public class HealthyBurger extends Hamburger {
 
-    //реализация с именем additional, а не конкретным additional как в Hamburger классе
+    //реализация с полем additionalName, а не конкретным additional как в Hamburger классе
     private String addition1Name;
     private double addition1Price;
     private String addition2Name;
     private double addition2Price;
-    private double price;
 
     public HealthyBurger(String meat, double price){
         super("Healthy burger", "Brown rye bread", meat, price);
-        this.price = price;
     }
 
     public void addAddition1(String name, double price){
