@@ -2,7 +2,7 @@ package section_8_arrays_and_lists.arrays.arrayList_1;
 
 import java.util.Scanner;
 
-public class Main {
+public class MainArray {
 
     private static Scanner s = new Scanner(System.in);
     private static int[] baseData = new int[10];
