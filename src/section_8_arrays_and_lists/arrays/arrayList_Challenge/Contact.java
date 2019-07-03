@@ -1,11 +1,11 @@
 package section_8_arrays_and_lists.arrays.arrayList_Challenge;
 
-public class Contacts {
+public class Contact {
 
     private String name;
     private String phone;
 
-    public Contacts(String name, String phone){
+    public Contact(String name, String phone){
         this.name = name;
         this.phone = phone;
     }
@@ -18,12 +18,9 @@ public class Contacts {
         return phone;
     }
 
-    public void setName(String name){
-        this.name = name;
-    }
+//    public static Contact createContact(String name, String phone){
+//        return new Contact(name, phone);
+//    }
 
-    public void setPhone(String phone){
-        this.phone = phone;
-    }
 
 }

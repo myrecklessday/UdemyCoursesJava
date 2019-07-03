@@ -2,8 +2,8 @@ package section_8_arrays_and_lists.arrays.arrayList_Challenge;
 
 // Create a program that implements a simple mobile phone with the following capabilities.
 // Able to store, modify, remove and query contact names.
-// You will want to create a separate class for Contacts (name and phone number).
-// Create a master class (MobilePhone) that holds the ArrayList of Contacts
+// You will want to create a separate class for Contact (name and phone number).
+// Create a master class (MobilePhone) that holds the ArrayList of Contact
 // The MobilePhone class has the functionality listed above.
 // Add a menu of options that are available.
 // Options:  Quit, print list of contacts, add new contact, update existing contact, remove contact
@@ -25,7 +25,6 @@ public class Main {
         boolean k = false;
         int choice = 0;
         printOptions();
-        Contacts contacts = new Contacts("ksks", "sksk");
 
         while (!k){
             System.out.println("Enter your choice: \r");
@@ -39,17 +38,17 @@ public class Main {
                     mobilePhone.printContacts();
                     break;
                 case 2:
-                    mobilePhone.addContact(contacts);
+                    addRecord();
                     break;
-//                case 3:
-//                    updateContact();
-//                    break;
-//                case 4:
-//                    removeContact();
-//                    break;
-//                case 5:
-//                    searchForContact();
-//                    break;
+                case 3:
+                    updateRecord();
+                    break;
+                case 4:
+                    removeRecord();
+                    break;
+                case 5:
+                    findRecord();
+                    break;
                 case 6:
                     k = true;
                     break;
@@ -62,12 +61,46 @@ public class Main {
     public static void printOptions(){
         System.out.println("\nPress ");
         System.out.println("\t 0 - To print choice options.");
-        System.out.println("\t 1 - To print the list of Contacts.");
+        System.out.println("\t 1 - To print the list of Contact.");
         System.out.println("\t 2 - To add a Contact to the list.");
         System.out.println("\t 3 - To update a contact in the list.");
         System.out.println("\t 4 - To remove a contact from the list.");
         System.out.println("\t 5 - To search for a contact in the list.");
         System.out.println("\t 6 - To quit the application.");
+    }
+
+    public static void addRecord(){
+        System.out.println("Enter the person's name: ");
+        String name = scanner.nextLine();
+        System.out.println("Enter the person's phone:");
+        String phone = scanner.nextLine();
+        Contact contact = new Contact(name, phone);
+        mobilePhone.addContact(contact);
+    }
+
+    public static void updateRecord(){
+
+        System.out.println("Enter name to update contact:");
+        String name = scanner.nextLine();
+        System.out.println("Enter new name:");
+        String newName = scanner.nextLine();
+        System.out.println("Enter new phone:");
+        String newPhone = scanner.nextLine();
+        Contact newContact = new Contact(newName, newPhone);
+        mobilePhone.updateContact( name, newContact);
+
+    }
+
+    public static void removeRecord(){
+        System.out.println("Enter the record name you want to remove:");
+        String name = scanner.nextLine();
+        mobilePhone.removeContact(name);
+    }
+
+    public static void findRecord(){
+        System.out.println("Enter the name you want to find:");
+        String name = scanner.nextLine();
+        mobilePhone.searchForContract(name);
     }
 
 }
