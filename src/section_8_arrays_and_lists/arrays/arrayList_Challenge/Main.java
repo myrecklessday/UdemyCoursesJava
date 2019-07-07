@@ -74,33 +74,56 @@ public class Main {
         String name = scanner.nextLine();
         System.out.println("Enter the person's phone:");
         String phone = scanner.nextLine();
-        Contact contact = new Contact(name, phone);
-        mobilePhone.addContact(contact);
+//        Contact contact = new Contact(name, phone);
+        Contact contact = Contact.createContact(name, phone);
+        if (mobilePhone.addContact(contact)){
+            System.out.println("New contact added: name = " + name + ", phone = " + phone);
+        } else {
+            System.out.println("Contact with name " + name + " already exists!");
+        }
     }
 
     public static void updateRecord(){
 
         System.out.println("Enter name to update contact:");
         String name = scanner.nextLine();
+        if (!mobilePhone.searchForContract(name)){
+            System.out.println("Contact doesn't exist!");
+            return;
+        }
+
         System.out.println("Enter new name:");
         String newName = scanner.nextLine();
         System.out.println("Enter new phone:");
         String newPhone = scanner.nextLine();
-        Contact newContact = new Contact(newName, newPhone);
-        mobilePhone.updateContact( name, newContact);
+        Contact newContact = Contact.createContact(newName, newPhone);
+
+        if (mobilePhone.updateContact(name, newContact)){
+            System.out.println("Contact with name " + name + " was updated to name = " + newName + ", phone = " + newPhone);
+        } else {
+            System.out.println("Update was not successful");
+        }
 
     }
 
     public static void removeRecord(){
         System.out.println("Enter the record name you want to remove:");
         String name = scanner.nextLine();
-        mobilePhone.removeContact(name);
+        if (mobilePhone.removeContact(name)){
+            System.out.println("Contact with name " + name + " has been removed");
+        } else {
+            System.out.println("Contact doesn't exist!");
+        }
     }
 
     public static void findRecord(){
         System.out.println("Enter the name you want to find:");
         String name = scanner.nextLine();
-        mobilePhone.searchForContract(name);
+        if (mobilePhone.searchForContract(name)){
+            System.out.println("Contact " + name + " is found in the Mobile Phone :)");
+        } else {
+            System.out.println("Contact was not found :(");
+        }
     }
 
 }

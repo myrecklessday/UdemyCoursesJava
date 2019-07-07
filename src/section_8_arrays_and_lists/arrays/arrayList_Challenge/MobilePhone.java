@@ -12,6 +12,7 @@ public class MobilePhone {
             for (int i = 0; i < contactsArrayList.size(); i++) {
                 System.out.println(contactsArrayList.get(i).getName());
                 System.out.println(contactsArrayList.get(i).getPhone());
+                System.out.println("**********");
             }
         } else {
             System.out.println("No contacts in the list");
@@ -27,49 +28,47 @@ public class MobilePhone {
         return null;
     }
 
-    public void addContact(Contact contact) {
+    public boolean addContact(Contact contact) {
         if (findContact(contact.getName()) == null){
             contactsArrayList.add(contact);
+            return true;
         }
-        else {
-            System.out.println("Contact already exists!");
-        }
+        return false;
     }
 
-    public void updateContact(String currentName, Contact newContact) {
+    public boolean updateContact(String currentName, Contact newContact) {
 
         Contact currentContact = findContact(currentName);
         if (currentContact != null){
             if (findContact(newContact.getName()) == null){
                 int index = contactsArrayList.indexOf(currentContact);
                 contactsArrayList.set(index, newContact);
+                return true;
             } else {
-                System.out.println("Person with name " + newContact.getName() + " already exists!");
+                    System.out.println("Person with name " + newContact.getName() + " already exists!");
+                    return false;
             }
-        } else {
-            System.out.println("Contact doesn't exist!");
         }
+        return false;
 
     }
 
-    public void removeContact(String name){
+    public boolean removeContact(String name){
         Contact contact = findContact(name);
         if (contact != null){
             contactsArrayList.remove(contact);
-            System.out.println("Contact has been removed");
-        } else {
-            System.out.println("Contact doesn't exist!");
+            return true;
         }
-
+        return false;
     }
 
-    public void searchForContract(String name){
+    public boolean searchForContract(String name){
         Contact contact = findContact(name);
         if (contact != null){
             System.out.println("Contact " + contact.getName() + " with phone " + contact.getPhone() + " is found in the Mobile Phone :)");
-        } else {
-            System.out.println("Contact was not found :(");
+            return true;
         }
+        return false;
     }
 
 }
