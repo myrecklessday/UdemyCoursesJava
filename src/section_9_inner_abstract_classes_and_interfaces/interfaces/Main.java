@@ -10,6 +10,11 @@ public class Main {
         lenasPhone.callPhone(3222);
         lenasPhone.answer();
 
+        lenasPhone = new MobilePhone(12345);
+//        lenasPhone.powerOn();
+        lenasPhone.callPhone(12345);
+        lenasPhone.answer();
+
     }
 
 }
