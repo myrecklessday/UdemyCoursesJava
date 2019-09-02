@@ -24,6 +24,8 @@ package section_9_inner_abstract_classes_and_interfaces.interfaces.interfaces_Ch
 // requires, and returns an ArrayList.
 // There is a whole Java I/O section later in the course where you will get to use files, etc.
 
+import section_7_oop_part2.composition_1.Monitor;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -43,6 +45,10 @@ public class Main {
         loadObject(kate);
         System.out.println(kate);
 
+        ISaveable vampire = new Monster("Vampire", 20, 48);
+        System.out.println(vampire);
+        System.out.println("Strength = " + ((Monster) vampire).getStrength());
+        saveObject(vampire);
 
     }
 

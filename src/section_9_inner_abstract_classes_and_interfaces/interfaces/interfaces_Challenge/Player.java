@@ -53,8 +53,8 @@ public class Player implements ISaveable {
     public List<String> write() {
         List<String> values = new ArrayList<String>();
         values.add(0, this.playerName);
-        values.add(1, "" + this.hitPoints);
-        values.add(2, "" + this.strength);
+        values.add(1, " " + this.hitPoints);
+        values.add(2, " " + this.strength);
         values.add(3, this.weapon);
 
         return values;
