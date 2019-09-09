@@ -64,36 +64,38 @@ public class Main {
 
     public static void main(String[] args) {
 
-        MyLinkedList myLinkedList = new MyLinkedList(null);
-        myLinkedList.traverse(myLinkedList.getRoot());
+//        MyLinkedList myLinkedList = new MyLinkedList(null);
+        SearchTree tree = new SearchTree(null);
+
+        tree.traverse(tree.getRoot());
 
         String stringData = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Minsk Canberra";
 
         String[] data = stringData.split(" ");
         for (String s : data) {
-            myLinkedList.addItem(new Node(s));
+            tree.addItem(new Node(s));
         }
-        myLinkedList.traverse(myLinkedList.getRoot());
+        tree.traverse(tree.getRoot());
 
-        myLinkedList.removeItem(new Node("Brisbane"));
-        myLinkedList.traverse(myLinkedList.getRoot());
+        tree.removeItem(new Node("Brisbane"));
+        tree.traverse(tree.getRoot());
 
-        myLinkedList.removeItem(new Node("Darwin"));
-        myLinkedList.traverse(myLinkedList.getRoot());
+        tree.removeItem(new Node("Darwin"));
+        tree.traverse(tree.getRoot());
 
-        myLinkedList.removeItem(new Node("Adelaide"));
-        myLinkedList.removeItem(new Node("Sydney"));
-        myLinkedList.removeItem(new Node("Canberra"));
-        myLinkedList.traverse(myLinkedList.getRoot());
+        tree.removeItem(new Node("Adelaide"));
+        tree.removeItem(new Node("Sydney"));
+        tree.removeItem(new Node("Canberra"));
+        tree.traverse(tree.getRoot());
 
-        myLinkedList.removeItem(new Node("Perth"));
-        myLinkedList.traverse(myLinkedList.getRoot());
-        myLinkedList.removeItem(new Node("Melbourne"));
-        myLinkedList.traverse(myLinkedList.getRoot());
-        myLinkedList.removeItem(new Node("Minsk"));
-        myLinkedList.traverse(myLinkedList.getRoot());
-        myLinkedList.removeItem(myLinkedList.getRoot());
-        myLinkedList.traverse(myLinkedList.getRoot());
+        tree.removeItem(new Node("Perth"));
+        tree.traverse(tree.getRoot());
+        tree.removeItem(new Node("Melbourne"));
+        tree.traverse(tree.getRoot());
+        tree.removeItem(new Node("Minsk"));
+        tree.traverse(tree.getRoot());
+        tree.removeItem(tree.getRoot());
+        tree.traverse(tree.getRoot());
 
     }
 

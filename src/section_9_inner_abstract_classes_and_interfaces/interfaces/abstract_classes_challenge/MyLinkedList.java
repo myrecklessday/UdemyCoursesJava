@@ -112,5 +112,11 @@ public class MyLinkedList implements NodeList {
             }
         }
 
+        // recursion:
+//        if (root != null) {
+//            System.out.println(root.getValue());
+//            traverse(root.moveToNextItem());
+//        }
+
     }
 }
