@@ -35,7 +35,7 @@ package section_9_inner_abstract_classes_and_interfaces.interfaces.abstract_clas
 //
 // You will also need a method to remove an item from the list.
 //
-// Hint: If you are creating classes with names such as List, LinkedList, Node etc, make sure that
+// Hint: If you are creating classes with names such as Node, LinkedList, Node etc, make sure that
 // you create your classes before referring to them. In previous videos we have often referred to
 // classes that we create later, but if you use names that IntelliJ recognises as Java classes (such
 // as LinkedList) then it will create imports for them and possibly cause you problems later.
@@ -63,6 +63,37 @@ package section_9_inner_abstract_classes_and_interfaces.interfaces.abstract_clas
 public class Main {
 
     public static void main(String[] args) {
+
+        MyLinkedList myLinkedList = new MyLinkedList(null);
+        myLinkedList.traverse(myLinkedList.getRoot());
+
+        String stringData = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Minsk Canberra";
+
+        String[] data = stringData.split(" ");
+        for (String s : data) {
+            myLinkedList.addItem(new Node(s));
+        }
+        myLinkedList.traverse(myLinkedList.getRoot());
+
+        myLinkedList.removeItem(new Node("Brisbane"));
+        myLinkedList.traverse(myLinkedList.getRoot());
+
+        myLinkedList.removeItem(new Node("Darwin"));
+        myLinkedList.traverse(myLinkedList.getRoot());
+
+        myLinkedList.removeItem(new Node("Adelaide"));
+        myLinkedList.removeItem(new Node("Sydney"));
+        myLinkedList.removeItem(new Node("Canberra"));
+        myLinkedList.traverse(myLinkedList.getRoot());
+
+        myLinkedList.removeItem(new Node("Perth"));
+        myLinkedList.traverse(myLinkedList.getRoot());
+        myLinkedList.removeItem(new Node("Melbourne"));
+        myLinkedList.traverse(myLinkedList.getRoot());
+        myLinkedList.removeItem(new Node("Minsk"));
+        myLinkedList.traverse(myLinkedList.getRoot());
+        myLinkedList.removeItem(myLinkedList.getRoot());
+        myLinkedList.traverse(myLinkedList.getRoot());
 
     }
 

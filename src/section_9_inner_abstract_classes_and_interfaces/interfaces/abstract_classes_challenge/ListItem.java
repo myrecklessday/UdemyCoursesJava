@@ -2,9 +2,9 @@ package section_9_inner_abstract_classes_and_interfaces.interfaces.abstract_clas
 
 public abstract class ListItem {
 
-    private ListItem rightLink = null;
-    private ListItem leftLink = null;
-    private Object value;
+    protected ListItem rightLink = null;
+    protected ListItem leftLink = null;
+    protected Object value;
 
     public ListItem(Object value) {
         this.value = value;
@@ -22,27 +22,9 @@ public abstract class ListItem {
     abstract ListItem setPrevious(ListItem item);
 
     abstract ListItem moveToNextItem();
-//        if (this.value != null){
-//            this.value = this.rightLink;
-//            return true;
-//        }
-//        return false;
 
     abstract ListItem moveToPreviousItem();
 
-//        if (this.value != null){
-//            this.value = this.leftLink;
-//            return true;
-//        }
-//        return false;
-
     abstract int compareTo(ListItem item);
-
-//        if (this.value.equals(parameter)){
-//            return 0;
-//        } else if (this.value > parameter) {
-//            return 1;
-//        }
-
 
 }
