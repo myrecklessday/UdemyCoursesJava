@@ -2,7 +2,7 @@ package section_10_generics.our_generic_class;
 
 import java.util.ArrayList;
 
-public class Team<T extends Player /* & Coach */> {
+public class Team<T extends Player /* & Coach */> implements Comparable<Team<T>> {
 
     private String name;
     int played = 0;
@@ -38,7 +38,7 @@ public class Team<T extends Player /* & Coach */> {
     }
 
     public void matchResult(Team<T> opponent, int ourScore, int theirScore) {
-        String message = " beat ";
+        String message;
         if (ourScore > theirScore) {
             won++;
             message = " beat ";
@@ -60,4 +60,14 @@ public class Team<T extends Player /* & Coach */> {
         return (won * 2) + tied;
     }
 
+    @Override
+    public int compareTo(Team<T> team) {
+        if (this.ranking() > team.ranking()) {
+            return -1;
+        } else if (this.ranking() < team.ranking()) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 }
