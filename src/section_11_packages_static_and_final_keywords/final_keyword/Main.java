@@ -20,7 +20,8 @@ public class Main {
 //        Math m = new Math();
 
         int pw = 6557;
-        Password password = new Password(pw);
+//        Password password = new Password(pw);
+        Password password = new ExtendedPassword(pw);
         password.storePassword();
         password.letMeIn(1);
         password.letMeIn(54445);
